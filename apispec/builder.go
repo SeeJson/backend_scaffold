@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/ghodss/yaml"
 	"io/ioutil"
 	"path/filepath"
 	"reflect"
@@ -13,7 +14,6 @@ import (
 
 	"github.com/k0kubun/pp"
 	log "github.com/sirupsen/logrus"
-	"gopkg.in/yaml.v2"
 )
 
 type EnumItem interface {

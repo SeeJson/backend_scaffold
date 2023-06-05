@@ -3,10 +3,9 @@ package apispec
 import (
 	"encoding/json"
 	"errors"
+	"github.com/ghodss/yaml"
 	"io/ioutil"
 	"path/filepath"
-
-	"gopkg.in/yaml.v2"
 )
 
 type ApiSpec struct {

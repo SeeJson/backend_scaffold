@@ -2,6 +2,7 @@ package apispec
 
 import (
 	"encoding/json"
+	"github.com/ghodss/yaml"
 	"io/ioutil"
 	"mime/multipart"
 	"testing"
