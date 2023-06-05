@@ -1,0 +1,62 @@
+[
+  {
+    "cat_name": "用户",
+    "page_title": "测试登录",
+    "page_content": "### 测试登录\n\n测试是否正常登录\n\n#### 请求URL:\n- /backend/api/v1/hola\n\n#### 请求方式:\n- GET\n\n#### 请求格式:\n- query\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n#### 请求示例:\n\n\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 0
+  },
+  {
+    "cat_name": "用户",
+    "page_title": "登录",
+    "page_content": "### 登录\n\n后台登录\n\n#### 请求URL:\n- /backend/api/v1/login\n\n#### 请求方式:\n- POST\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|name|string||\n|password|string||\n\n\n#### 请求示例:\n\n```\n{\n  \"name\": \"\",\n  \"password\": \"\"\n}\n```\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n|data|backend.LoginData||\n\n\nbackend.LoginData\n\n|字段名|类型|备注|\n|---|---|---|\n|uid|int64||\n|name|string||\n|role|uint32||\n|perm|uint64||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"ok\",\n  \"error\": \"\",\n  \"data\": {\n    \"uid\": 0,\n    \"name\": \"\",\n    \"role\": 0,\n    \"perm\": 0\n  }\n}\n```\n\n\n------\n",
+    "s_number": 1
+  },
+  {
+    "cat_name": "用户",
+    "page_title": "登出",
+    "page_content": "### 登出\n\n登出\n\n#### 请求URL:\n- /backend/api/v1/logout\n\n#### 请求方式:\n- POST\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n#### 请求示例:\n\n\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 2
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "新增任务",
+    "page_content": "### 新增任务\n\n新增任务\n\n#### 请求URL:\n- /backend/api/v1/task\n\n#### 请求方式:\n- POST\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|type|string|任务类型 枚举类型[image:图片 video:视频]|\n|priority|int8|任务优先级|\n|input|string|任务输入|\n|note|string|备注|\n\n\n#### 请求示例:\n\n```\n{\n  \"type\": \"\",\n  \"priority\": 0,\n  \"input\": \"\",\n  \"note\": \"\"\n}\n```\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"ok\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 0
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "任务详情",
+    "page_content": "### 任务详情\n\n任务详情\n\n#### 请求URL:\n- /backend/api/v1/task\n\n#### 请求方式:\n- GET\n\n#### 请求格式:\n- query\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|id|int64||\n\n\n#### 请求示例:\n\n\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n|data|backend.TaskDetail||\n\n\nbackend.TaskDetail\n\n|字段名|类型|备注|\n|---|---|---|\n|id|int64||\n|status|uint8|任务状态 枚举类型[0:等待 2:处理中 1:完成 3:取消]|\n|type|string|任务类型 枚举类型[image:图片 video:视频]|\n|priority|int8|任务优先级|\n|input|string|任务输入|\n|result|string|任务结果|\n|note|string|备注|\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"\",\n  \"error\": \"\",\n  \"data\": {\n    \"id\": 0,\n    \"status\": 0,\n    \"type\": \"\",\n    \"priority\": 0,\n    \"input\": \"\",\n    \"result\": \"\",\n    \"note\": \"\"\n  }\n}\n```\n\n\n------\n",
+    "s_number": 1
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "更新任务信息",
+    "page_content": "### 更新任务信息\n\n更新任务信息\n\n#### 请求URL:\n- /backend/api/v1/task\n\n#### 请求方式:\n- PUT\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|id|int64||\n|note|string|备注|\n|priority|int8|任务优先级|\n\n\n#### 请求示例:\n\n```\n{\n  \"id\": 0,\n  \"note\": \"\",\n  \"priority\": 0\n}\n```\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"ok\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 2
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "更新任务状态",
+    "page_content": "### 更新任务状态\n\n更新任务状态\n\n#### 请求URL:\n- /backend/api/v1/task/status\n\n#### 请求方式:\n- PUT\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|id|int64||\n|status|uint8|任务状态 枚举类型[0:等待 2:处理中 1:完成 3:取消]|\n\n\n#### 请求示例:\n\n```\n{\n  \"id\": 0,\n  \"status\": 0\n}\n```\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"ok\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 3
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "删除任务",
+    "page_content": "### 删除任务\n\n删除任务\n\n#### 请求URL:\n- /backend/api/v1/task\n\n#### 请求方式:\n- DELETE\n\n#### 请求格式:\n- json\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|ids|[]int64||\n\n\n#### 请求示例:\n\n```\n{\n  \"ids\": null\n}\n```\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"ok\",\n  \"error\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 4
+  },
+  {
+    "cat_name": "任务",
+    "page_title": "任务列表",
+    "page_content": "### 任务列表\n\n任务列表\n\n#### 请求URL:\n- /backend/api/v1/tasks\n\n#### 请求方式:\n- GET\n\n#### 请求格式:\n- query\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|offset|int||\n|limit|int||\n\n\n#### 请求示例:\n\n\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n|total|int64||\n|items|[]backend.TaskItem||\n\n\nbackend.TaskItem\n\n|字段名|类型|备注|\n|---|---|---|\n|id|int64||\n|status|uint8|任务状态 枚举类型[0:等待 2:处理中 1:完成 3:取消]|\n|type|string|任务类型 枚举类型[image:图片 video:视频]|\n|priority|int8|任务优先级|\n|note|string|备注|\n|user|backend.UidName|用户信息|\n\n\nbackend.UidName\n\n|字段名|类型|备注|\n|---|---|---|\n|uid|int64|用户名|\n|name|string|用户名|\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"\",\n  \"error\": \"\",\n  \"total\": 0,\n  \"items\": [\n    {\n      \"id\": 0,\n      \"status\": 0,\n      \"type\": \"\",\n      \"priority\": 0,\n      \"note\": \"\",\n      \"user\": {\n        \"uid\": 0,\n        \"name\": \"\"\n      }\n    },\n    {\n      \"id\": 0,\n      \"status\": 0,\n      \"type\": \"\",\n      \"priority\": 0,\n      \"note\": \"\",\n      \"user\": {\n        \"uid\": 0,\n        \"name\": \"\"\n      }\n    }\n  ]\n}\n```\n\n\n------\n",
+    "s_number": 5
+  },
+  {
+    "cat_name": "其它",
+    "page_title": "上传图片",
+    "page_content": "### 上传图片\n\n上传图片\n\n#### 请求URL:\n- /backend/api/v1/upload\n\n#### 请求方式:\n- POST\n\n#### 请求格式:\n- form-data\n\n#### 所需权限:\n- 无\n\n#### 请求参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|file|表单文件||\n\n\n#### 请求示例:\n\n\n\n#### 返回参数:\n\n\n\n|字段名|类型|备注|\n|---|---|---|\n|code|int||\n|msg|string||\n|error|string||\n|uri|string||\n|full_uri|string||\n\n\n#### 返回示例:\n\n```\n{\n  \"code\": 0,\n  \"msg\": \"\",\n  \"error\": \"\",\n  \"uri\": \"\",\n  \"full_uri\": \"\"\n}\n```\n\n\n------\n",
+    "s_number": 0
+  }
+]

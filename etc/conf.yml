@@ -1,0 +1,52 @@
+debug: true
+
+# 用户认证(jwt)
+auth:
+    # 签名方式(支持：HS512/HS384/HS512)
+    signing_method: "HS512"
+    # 签名key
+    signing_key: "GINADMIN"
+    # 过期时间（单位秒）
+    expired: 7200000
+    # 存储(支持：file/redis)
+    store: "file"
+    # 文件路径
+    file_path: "data/jwt_auth.db"
+    # redis数据库(如果存储方式是redis，则指定存储的数据库)
+    redis_db: 10
+    # 存储到redis数据库中的键名前缀
+    redis_prefix: "auth_"
+    secret: f29252bf7e344169hd3j35af1pdcaz79
+
+captcha:
+    enable: true
+    check_count: 3
+    height: 80
+    width: 240
+    max_skew: 0.7
+    dot_count: 80
+    captcha_len: 5
+
+#db: <user>:<password>/<database>?charset=utf8&parseTime=True&loc=Local
+db:
+  dsn: root:123456@tcp(127.0.0.1:3306)/backend_scaffold?charset=utf8mb4&parseTime=True&loc=Local
+  debug: true
+
+upload:
+  save_dir: data/upload
+  url_prefix:
+
+cache:
+  addr: 10.152.207.1:6379
+
+session:
+  max_idle_time: 90000
+  max_session_alive: 100
+  cookie:
+    key: backend-token
+    domain: ''
+    max_age: 0
+  jwt:
+    secret: jwt_secret
+    expire: 48h
+

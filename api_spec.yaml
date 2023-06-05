@@ -1,0 +1,742 @@
+info:
+  title: 后台服务API接口
+  description: ""
+  version: ""
+route_groups:
+- name: 用户
+  routes:
+  - name: 测试登录
+    desc: 测试是否正常登录
+    method: GET
+    uri: /backend/api/v1/hola
+    permissions: 无
+    request: null
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+  - name: 登录
+    desc: 后台登录
+    method: POST
+    uri: /backend/api/v1/login
+    permissions: 无
+    request:
+      format: ""
+      schema: backend.LoginRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: backend.LoginResponse
+      json_example: ""
+    error_responses: []
+  - name: 登出
+    desc: 登出
+    method: POST
+    uri: /backend/api/v1/logout
+    permissions: 无
+    request: null
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+- name: 任务
+  routes:
+  - name: 新增任务
+    desc: 新增任务
+    method: POST
+    uri: /backend/api/v1/task
+    permissions: 无
+    request:
+      format: ""
+      schema: backend.NewTaskRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+  - name: 任务详情
+    desc: 任务详情
+    method: GET
+    uri: /backend/api/v1/task
+    permissions: 无
+    request:
+      format: ""
+      schema: ginplus.IDRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: backend.TaskDetailResponse
+      json_example: ""
+    error_responses: []
+  - name: 更新任务信息
+    desc: 更新任务信息
+    method: PUT
+    uri: /backend/api/v1/task
+    permissions: 无
+    request:
+      format: ""
+      schema: backend.UpdateTaskRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+  - name: 更新任务状态
+    desc: 更新任务状态
+    method: PUT
+    uri: /backend/api/v1/task/status
+    permissions: 无
+    request:
+      format: ""
+      schema: backend.UpdateTaskStatusRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+  - name: 删除任务
+    desc: 删除任务
+    method: DELETE
+    uri: /backend/api/v1/task
+    permissions: 无
+    request:
+      format: ""
+      schema: ginplus.IDsRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: ginplus.CommonResponse
+      json_example: ""
+    error_responses: []
+  - name: 任务列表
+    desc: 任务列表
+    method: GET
+    uri: /backend/api/v1/tasks
+    permissions: 无
+    request:
+      format: ""
+      schema: ginplus.Pager
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: backend.ListTaskResponse
+      json_example: ""
+    error_responses: []
+- name: 其它
+  routes:
+  - name: 上传图片
+    desc: 上传图片
+    method: POST
+    uri: /backend/api/v1/upload
+    permissions: 无
+    request:
+      format: form-data
+      schema: app.UploadRequest
+      json_example: ""
+    success_response:
+      http_code: "200"
+      format: json
+      schema: app.UploadResponse
+      json_example: ""
+    error_responses: []
+schemas:
+  app.UploadRequest:
+    id: ""
+    name: app.UploadRequest
+    fields:
+    - name: file
+      type:
+        name: ""
+        type: file
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  app.UploadResponse:
+    id: ""
+    name: app.UploadResponse
+    fields:
+    - name: code
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: msg
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: error
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: uri
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: full_uri
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  backend.ListTaskResponse:
+    id: ""
+    name: backend.ListTaskResponse
+    fields:
+    - name: code
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: msg
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: error
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: total
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: items
+      type:
+        name: '[]backend.TaskItem'
+        type: array
+        key: ""
+        ref: backend.TaskItem
+      comment: ""
+      enum: ""
+  backend.LoginData:
+    id: ""
+    name: backend.LoginData
+    fields:
+    - name: uid
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: name
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: role
+      type:
+        name: uint32
+        type: uint32
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: perm
+      type:
+        name: uint64
+        type: uint64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  backend.LoginRequest:
+    id: ""
+    name: backend.LoginRequest
+    fields:
+    - name: name
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: password
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  backend.LoginResponse:
+    id: ""
+    name: backend.LoginResponse
+    fields:
+    - name: code
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: msg
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: error
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: data
+      type:
+        name: backend.LoginData
+        type: object
+        key: ""
+        ref: backend.LoginData
+      comment: ""
+      enum: ""
+  backend.NewTaskRequest:
+    id: ""
+    name: backend.NewTaskRequest
+    fields:
+    - name: type
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务类型
+      enum: TaskType
+    - name: priority
+      type:
+        name: int8
+        type: int8
+        key: ""
+        ref: ""
+      comment: 任务优先级
+      enum: ""
+    - name: input
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务输入
+      enum: ""
+    - name: note
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 备注
+      enum: ""
+  backend.TaskDetail:
+    id: ""
+    name: backend.TaskDetail
+    fields:
+    - name: id
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: status
+      type:
+        name: uint8
+        type: uint8
+        key: ""
+        ref: ""
+      comment: 任务状态
+      enum: TaskStatus
+    - name: type
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务类型
+      enum: TaskType
+    - name: priority
+      type:
+        name: int8
+        type: int8
+        key: ""
+        ref: ""
+      comment: 任务优先级
+      enum: ""
+    - name: input
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务输入
+      enum: ""
+    - name: result
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务结果
+      enum: ""
+    - name: note
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 备注
+      enum: ""
+  backend.TaskDetailResponse:
+    id: ""
+    name: backend.TaskDetailResponse
+    fields:
+    - name: code
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: msg
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: error
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: data
+      type:
+        name: backend.TaskDetail
+        type: object
+        key: ""
+        ref: backend.TaskDetail
+      comment: ""
+      enum: ""
+  backend.TaskItem:
+    id: ""
+    name: backend.TaskItem
+    fields:
+    - name: id
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: status
+      type:
+        name: uint8
+        type: uint8
+        key: ""
+        ref: ""
+      comment: 任务状态
+      enum: TaskStatus
+    - name: type
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 任务类型
+      enum: TaskType
+    - name: priority
+      type:
+        name: int8
+        type: int8
+        key: ""
+        ref: ""
+      comment: 任务优先级
+      enum: ""
+    - name: note
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 备注
+      enum: ""
+    - name: user
+      type:
+        name: backend.UidName
+        type: object
+        key: ""
+        ref: backend.UidName
+      comment: 用户信息
+      enum: ""
+  backend.UidName:
+    id: ""
+    name: backend.UidName
+    fields:
+    - name: uid
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: 用户名
+      enum: ""
+    - name: name
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 用户名
+      enum: ""
+  backend.UpdateTaskRequest:
+    id: ""
+    name: backend.UpdateTaskRequest
+    fields:
+    - name: id
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: note
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: 备注
+      enum: ""
+    - name: priority
+      type:
+        name: int8
+        type: int8
+        key: ""
+        ref: ""
+      comment: 任务优先级
+      enum: ""
+  backend.UpdateTaskStatusRequest:
+    id: ""
+    name: backend.UpdateTaskStatusRequest
+    fields:
+    - name: id
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: status
+      type:
+        name: uint8
+        type: uint8
+        key: ""
+        ref: ""
+      comment: 任务状态
+      enum: TaskStatus
+  ginplus.CommonResponse:
+    id: ""
+    name: ginplus.CommonResponse
+    fields:
+    - name: code
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: msg
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: error
+      type:
+        name: string
+        type: string
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  ginplus.IDRequest:
+    id: ""
+    name: ginplus.IDRequest
+    fields:
+    - name: id
+      type:
+        name: int64
+        type: int64
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+  ginplus.IDsRequest:
+    id: ""
+    name: ginplus.IDsRequest
+    fields:
+    - name: ids
+      type:
+        name: '[]int64'
+        type: array
+        key: ""
+        ref: int64
+      comment: ""
+      enum: ""
+  ginplus.Pager:
+    id: ""
+    name: ginplus.Pager
+    fields:
+    - name: offset
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+    - name: limit
+      type:
+        name: int
+        type: int
+        key: ""
+        ref: ""
+      comment: ""
+      enum: ""
+enums:
+  TaskStatus:
+  - name: 等待
+    int: 0
+    desc: "0"
+  - name: 处理中
+    int: 0
+    desc: "2"
+  - name: 完成
+    int: 0
+    desc: "1"
+  - name: 取消
+    int: 0
+    desc: "3"
+  TaskType:
+  - name: image
+    int: 0
+    desc: 图片
+  - name: video
+    int: 1
+    desc: 视频
+error_codes:
+- code: "10100"
+  msg: internal_server_error
+  desc: ""
+- code: "10101"
+  msg: unauthorized
+  desc: ""
+- code: "10102"
+  msg: invalid_request
+  desc: ""
+- code: "10103"
+  msg: session_expired
+  desc: ""
+- code: "10104"
+  msg: duplicated_entry
+  desc: ""
+- code: "10106"
+  msg: user_or_password_incorrect
+  desc: ""
+- code: "10107"
+  msg: invalid_token
+  desc: ""
+- code: "10108"
+  msg: no_permission
+  desc: ""
+- code: "10109"
+  msg: not_found
+  desc: ""
+- code: "10121"
+  msg: invalid_status
+  desc: ""
+- code: "10121"
+  msg: more than the max limit
+  desc: ""
+- code: "10200"
+  msg: reach_max_login_limit
+  desc: ""
+- code: "10201"
+  msg: outdated_session
+  desc: ""
+- code: "10202"
+  msg: bad_cookie
+  desc: ""
+- code: "10203"
+  msg: bad_session
+  desc: ""
+- code: "10204"
+  msg: reach_max_connections_limit
+  desc: ""

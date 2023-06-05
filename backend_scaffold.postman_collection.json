@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "b6b7c766-5465-4e9a-b9ad-4a74c8fe1f1f",
+		"name": "backend_scaffold",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/tasks",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"root\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"video\",\n    \"input\": \"http://10.5.42.118:8000/medius_131/st/mix04.mp\",\n    \"note\": \"33\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/task",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/tasks?limit=7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/tasks?limit=7",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/task?id=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/task?id=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"task"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [2, 3]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/task",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"id\": 1,\n        \"priority\": 4,\n        \"note\": \"xxxx\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/task",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:18001/backend/api/v1/task/status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"status\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:18001/backend/api/v1/task/status",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "18001",
+					"path": [
+						"backend",
+						"api",
+						"v1",
+						"task",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
